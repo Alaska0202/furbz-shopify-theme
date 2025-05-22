@@ -134,3 +134,41 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Shopify theme files
+.shopify/
+node_modules/
+dist/
+build/
+.cache/
+
+# Theme settings/local config
+.env
+.env.*.local
+*.env.local
+*.env.development.local
+*.env.production.local
+
+# macOS and system files
+.DS_Store
+Thumbs.db
+
+# Editor-specific
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Theme-specific junk
+*.zip
+*.tar.gz
+
+# Optional: exclude compiled assets if using tools like Tailwind or Webpack
+/assets/*.css.map
+/assets/*.js.map
+
+# GitHub codespaces or dev containers
+.devcontainer/
