@@ -11,10 +11,7 @@
   "sections": {
     "main-collection-banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "settings": {
-        "show_collection_description": false,
-        "show_collection_image": false,
         "color_scheme": "scheme-1"
       }
     },
