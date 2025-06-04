@@ -1,0 +1,93 @@
+{% doc %}
+  @prompt
+    Create CSS to hide the site title in the header while keeping the main logo visible
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .hide-site-title-{{ ai_gen_id }} {
+    display: {{ block.settings.hide_site_title | default: true | replace: 'true', 'block' | replace: 'false', 'none' }};
+  }
+
+  {% if block.settings.hide_site_title %}
+    .header__heading-link .h2,
+    .header__heading-link span:not(.header__heading-logo),
+    .header-wrapper--border-bottom .header__heading-link .h2,
+    .header-wrapper .header__heading-link .h2,
+    .header__heading .h2,
+    .header .header__heading-link span:not(.header__heading-logo) {
+      display: none !important;
+      visibility: hidden !important;opacity: 0 !important;
+      position: absolute !important;width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;clip: rect(0 0 0 0) !important;clip-path: inset(50%) !important;
+      white-space: nowrap !important;
+    }
+
+    .header__heading-logo {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;}
+  {% endif %}
+
+  {% if block.settings.adjust_logo_size %}
+    .header__heading-logo {
+      width: {{ block.settings.logo_width }}px !important;
+      max-width: 100% !important;}
+
+    .header__heading-logo-wrapper img {
+      width: 100% !important;
+      height: auto !important;max-width: {{ block.settings.logo_width }}px !important;
+    }
+  {% endif %}
+{% endstyle %}
+
+<div class="hide-site-title-{{ ai_gen_id }}" {{ block.shopify_attributes }}></div>
+
+{% schema %}
+{
+  "name": "Hide Site Title",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Site Title Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_site_title",
+      "label": "Hide site title text",
+      "default": true,
+      "info": "Hides the site title text while keeping the logo visible"
+    },
+    {
+      "type": "header",
+      "content": "Logo Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "adjust_logo_size",
+      "label": "Adjust logo size",
+      "default": false,
+      "info": "Enable to customize the logo size"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 100,
+      "info": "Adjust the width of your logo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hide Site Title"
+    }
+  ]
+}
+{% endschema %}
