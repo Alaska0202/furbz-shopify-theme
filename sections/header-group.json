@@ -70,6 +70,7 @@
     },
     "custom_liquid_GHaM9y": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<style>\n  .neon-container {\n    position: relative;\n    width: 100%;\n    max-width: 100%;\n    overflow: hidden;\n    padding: 0;\n    margin: 0;\n    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #00ff00, #ff00ff);\n    background-size: 400% 400%;\n    animation: neon-shift 8s linear infinite;\n    /* Remove any default padding/margins that might be causing gaps */\n    box-sizing: border-box;\n  }\n  \n  @keyframes neon-shift {\n    0% { background-position: 0% 50%; }\n    50% { background-position: 100% 50%; }\n    100% { background-position: 0% 50%; }\n  }\n  \n  .neon-image {\n    display: block;\n    width: 100%;\n    height: auto;\n    margin: 0;\n    padding: 0;\n    vertical-align: top; /* Removes bottom gap */\n    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));\n  }\n  \n  /* Target any parent elements that might be adding space */\n  .neon-container * {\n    margin: 0;\n    padding: 0;\n  }\n</style>\n\n<div class=\"neon-container\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0616/4761/8123/files/finalfurb.png?v=1748632752\" alt=\"Furbalicious image\" class=\"neon-image\">\n</div>",
