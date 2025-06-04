@@ -1,62 +1,71 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
-{%- if collection.handle == 'the-store' -%}
-  <style>
-    .collection-hero__text-wrapper,
-    .collection-hero__title,
-    .collection-hero__description {
-      display: none !important;
-    }
-    .custom-store-banner img {
-      width: 100%;
-      display: block;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+<div class="collection-hero color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__inner page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    
+    {% case collection.handle %}
+      {% when 'store' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/store-collection-mobile-banner.png?v=1749009672"
+          alt="The Store Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+      
+      {% when 'vault' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/vault-collection-banner.png?v=1749012345"
+          alt="The Vault Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+      
+      {% when 'the-closet' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/closet-collection-banner.png?v=1749012346"
+          alt="The Closet Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
 
-  <div class="custom-store-banner">
-    <img
-      src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/store-collection-mobile-banner.png?v=1749009672"
-      alt="The Store Banner"
-    />
-  </div>
+      {% when 'longboiz-and-weirdos' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/longboiz-banner.png?v=1749012347"
+          alt="Longboiz & Weirdos Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
 
-{%- else -%}
-  <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-    <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      <div class="collection-hero__text-wrapper">
+      {% when 'graveyard' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/graveyard-collection-banner.png?v=1749012348"
+          alt="Graveyard Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+
+      {% when 'furbidden-zone' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/furbidden-collection-banner.png?v=1749012349"
+          alt="Furbidden Zone Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+
+      {% else %}
         <h1 class="collection-hero__title">
           <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
           {{- collection.title | escape -}}
         </h1>
 
-        {%- if section.settings.show_collection_description -%}
+        {% if section.settings.show_collection_description %}
           <div class="collection-hero__description rte">{{ collection.description }}</div>
-        {%- endif -%}
-      </div>
+        {% endif %}
+    {% endcase %}
 
-      {%- if section.settings.show_collection_image and collection.image -%}
-        <div class="collection-hero__image-container media gradient">
-          <img
-            srcset="
-              {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-              {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-              {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-              {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-              {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-              {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-              {{ collection.image | image_url }} {{ collection.image.width }}w
-            "
-            src="{{ collection.image | image_url: width: 750 }}"
-            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
-            alt="{{ collection.image.alt | escape }}"
-            width="{{ collection.image.width }}"
-            height="{{ collection.image.height }}"
-          >
-        </div>
-      {%- endif -%}
-    </div>
   </div>
-{%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Collection Banner – Full Width",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Background color scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}
