@@ -58,16 +58,6 @@
         "enable_language_selector": false
       }
     },
-    "custom_liquid_qkqKcF": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div style=\"text-align: center; width: 100%; padding: 5px 0;\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0616/4761/8123/files/alternate_theshop_collection_hero.png?v=1749013490\" alt=\"Store Collection Banner\" style=\"max-width: 100%; height: auto; display: block; margin: 0 auto;\">\n</div>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "custom_liquid_GHaM9y": {
       "type": "custom-liquid",
       "disabled": true,
@@ -83,7 +73,6 @@
   "order": [
     "header",
     "announcement_bar_wwqzmR",
-    "custom_liquid_qkqKcF",
     "custom_liquid_GHaM9y"
   ]
 }
