@@ -1,1 +1,136 @@
-{"sections":{"image_banner_bjVCYk":{"type":"image-banner","blocks":{"buttons_yEkVkF":{"type":"buttons","settings":{"button_label_1":"The Real Reason We Left Etsy","button_link_1":"","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["buttons_yEkVkF"],"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/furb_logo.png","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"scheme-2","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":false}},"collection_list_jeme3d":{"type":"collection-list","blocks":{"featured_collection_ddVGJU":{"type":"featured_collection","settings":{"collection":"store"}},"featured_collection_mhpbaJ":{"type":"featured_collection","settings":{"collection":"vault"}},"featured_collection_gYBYtm":{"type":"featured_collection","settings":{"collection":"longboiz-and-weirdos"}}},"block_order":["featured_collection_ddVGJU","featured_collection_mhpbaJ","featured_collection_gYBYtm"],"name":"t:sections.collection-list.presets.name","settings":{"title":"","heading_size":"h2","image_ratio":"adapt","columns_desktop":3,"color_scheme":"scheme-1","show_view_all":false,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":72,"padding_bottom":0}},"collection_list_d8p4pp":{"type":"collection-list","blocks":{"featured_collection_99mb9e":{"type":"featured_collection","settings":{"collection":"the-closet"}},"featured_collection_megGjm":{"type":"featured_collection","settings":{"collection":"the-furbidden-zone"}},"featured_collection_fhjAHp":{"type":"featured_collection","settings":{"collection":"graveyard"}}},"block_order":["featured_collection_99mb9e","featured_collection_megGjm","featured_collection_fhjAHp"],"name":"t:sections.collection-list.presets.name","settings":{"title":"","heading_size":"h0","image_ratio":"adapt","columns_desktop":3,"color_scheme":"scheme-1","show_view_all":false,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0}},"1748805503db17fff3":{"type":"_blocks","blocks":{"ai_gen_block_774e051_hcGHLm":{"type":"ai_gen_block_774e051","settings":{"hide_site_title":false,"adjust_logo_size":false,"logo_width":50},"blocks":{}}},"block_order":["ai_gen_block_774e051_hcGHLm"],"settings":{}}},"order":["image_banner_bjVCYk","collection_list_jeme3d","collection_list_d8p4pp","1748805503db17fff3"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_bjVCYk": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/furb_logo.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-2",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "collection_list_jeme3d": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_ddVGJU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "store"
+          }
+        },
+        "featured_collection_mhpbaJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vault"
+          }
+        },
+        "featured_collection_gYBYtm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "longboiz-and-weirdos"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_ddVGJU",
+        "featured_collection_mhpbaJ",
+        "featured_collection_gYBYtm"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_d8p4pp": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_99mb9e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "the-closet"
+          }
+        },
+        "featured_collection_megGjm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "the-furbidden-zone"
+          }
+        },
+        "featured_collection_fhjAHp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "graveyard"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_99mb9e",
+        "featured_collection_megGjm",
+        "featured_collection_fhjAHp"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1748805503db17fff3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_774e051_hcGHLm": {
+          "type": "ai_gen_block_774e051",
+          "settings": {
+            "hide_site_title": false,
+            "adjust_logo_size": false,
+            "logo_width": 50
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_774e051_hcGHLm"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_banner_bjVCYk",
+    "collection_list_jeme3d",
+    "collection_list_d8p4pp",
+    "1748805503db17fff3"
+  ]
+}
