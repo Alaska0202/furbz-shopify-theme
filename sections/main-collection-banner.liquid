@@ -1,84 +1,13 @@
-{% comment %} force Shopify refresh {% endcomment %}
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
-
-<div class="collection-hero color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    
-    {% case collection.handle %}
-      {% when 'store' %}
-        <div style="padding-bottom: clamp(12px, 3vw, 24px);">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/1.png?v=1748236350"
-            alt="The Store Banner"
-            style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
-        </div>
-      
-      {% when 'vault' %}
-        <div style="padding-bottom: clamp(12px, 3vw, 24px);">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/VAULTTNEW.png?v=1748563109"
-            alt="The Vault Banner"
-            style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
-        </div>
-      
-      {% when 'the-closet' %}
-        <div style="padding-bottom: clamp(12px, 3vw, 24px);">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/CLOZEETTT.png?v=1748562525"
-            alt="The Closet Banner"
-            style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
-        </div>
-
-      {% when 'longboiz-and-weirdos' %}
-        <div style="padding-bottom: clamp(12px, 3vw, 24px);">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/LONGBOIZZ.png?v=1748562333"
-            alt="Longboiz & Weirdos Banner"
-            style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
-        </div>
-
-      {% when 'graveyard' %}
-        <div style="padding-bottom: clamp(12px, 3vw, 24px);">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/GRAVE.png?v=1748563140"
-            alt="Graveyard Banner"
-            style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
-        </div>
-
-      {% when 'furbidden-zone' %}
-        <div style="padding-bottom: clamp(12px, 3vw, 24px);">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/FURBIDDEN.png?v=1748562415"
-            alt="Furbidden Zone Banner"
-            style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
-        </div>
-
-      {% else %}
-        <h1 class="collection-hero__title">
-          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-          {{- collection.title | escape -}}
-        </h1>
-
-        {% if section.settings.show_collection_description %}
-          <div class="collection-hero__description rte">{{ collection.description }}</div>
-        {% endif %}
-    {% endcase %}
-
-  </div>
-</div>
-
-{% schema %}
-{
-  "name": "Banner",
-  "class": "section",
-  "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Background color scheme",
-      "default": "scheme-1"
-    }
-  ]
-}
-{% endschema %}
+{% if settings.logo != blank %}
+  <a href="{{ routes.root_url }}" class="header__logo-link" style="display: inline-block;">
+    <img
+      src="{{ settings.logo | img_url: 'master' }}"
+      alt="{{ shop.name }}"
+      class="header__logo-image"
+      style="max-height: 60px;" />
+  </a>
+{% else %}
+  <h1 class="header__site-name">
+    <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+  </h1>
+{% endif %}
