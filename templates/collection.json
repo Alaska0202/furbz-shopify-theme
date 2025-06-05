@@ -122,12 +122,23 @@
         "padding_top": 32,
         "padding_bottom": 8
       }
+    },
+    "led_ticker_PkQL3G": {
+      "type": "Led-ticker",
+      "name": "LED Ticker Display",
+      "settings": {
+        "ticker_text": "✨ Step right into the Collector’s Candy Bin – where every Furby’s got flair, freak, and a full-blown personality.🧠 Whether you’re after cursed cuties, pastel princesses, or retired legends…🛍️ Each one’s a hand-picked, real-deal oddball. No bootlegs. No basics.💎 Looking for something… rarer? Weirder? Vaulted?👉 Click here to unlock the vault.",
+        "text_size": 30,
+        "led_color": "#00ff00",
+        "scroll_speed": 30
+      }
     }
   },
   "order": [
     "main-collection-banner",
     "17490926639c0973d2",
     "rich_text_CpMayR",
-    "main-product-grid"
+    "main-product-grid",
+    "led_ticker_PkQL3G"
   ]
 }
