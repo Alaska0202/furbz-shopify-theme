@@ -1,6 +1,179 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<div class="led-ticker-container">
+  <div class="led-ticker">
+    <div class="led-ticker__frame">
+      <div class="led-ticker__screen">
+        <div class="led-ticker__text" id="ledTickerText">{{ section.settings.ticker_text }}</div>
+        <!-- Add glow effects at each end -->
+        <div class="led-ticker__glow led-ticker__glow--left"></div>
+        <div class="led-ticker__glow led-ticker__glow--right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.led-ticker-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.led-ticker {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.led-ticker__frame {
+  width: 100%;
+  background-color: #222;
+  border-top: 4px solid #333;
+  border-bottom: 4px solid #333;
+  border-radius: 4px;
+  padding: 2px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.led-ticker__screen {
+  width: 100%;
+  overflow: hidden;
+  background-color: #111;
+  position: relative;
+  padding: 8px 0;
+}
+
+/* Create dense dot-matrix background */
+.led-ticker__screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, #0a0a0a 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+.led-ticker__text {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: monospace, 'Courier New', Courier;
+  font-weight: bold;
+  font-size: {{ section.settings.text_size }}px;
+  color: {{ section.settings.led_color }};
+  /* Super intense neon glow effect */
+  text-shadow: 
+    0 0 5px {{ section.settings.led_color }}, 
+    0 0 10px {{ section.settings.led_color }},
+    0 0 15px {{ section.settings.led_color }},
+    0 0 20px {{ section.settings.led_color }};
+  animation: tickerMove {{ section.settings.scroll_speed }}s linear infinite;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+/* Create dot-matrix text effect */
+.led-ticker__text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.7) 30%);
+  background-size: 3px 3px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Add glow effects at the ends of the ticker */
+.led-ticker__glow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.led-ticker__glow--left {
+  left: 0;
+  background: linear-gradient(to right, 
+    rgba({{ section.settings.led_color | color_to_rgb }}, 0.3), 
+    rgba(0,0,0,0)
+  );
+}
+
+.led-ticker__glow--right {
+  right: 0;
+  background: linear-gradient(to left, 
+    rgba({{ section.settings.led_color | color_to_rgb }}, 0.3), 
+    rgba(0,0,0,0)
+  );
+}
+
+@keyframes tickerMove {
+  0% {
+    transform: translateX(100%);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .led-ticker__text {
+    font-size: {{ section.settings.text_size | times: 0.8 }}px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "LED Ticker Display",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker Text",
+      "default": "BREAKING NEWS: SPECIAL SALE TODAY - 50% OFF ALL ITEMS - LIMITED TIME OFFER"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "led_color",
+      "label": "LED Color",
+      "default": "#00ff00"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "label": "Scroll Speed (seconds)",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "LED Ticker Display",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
