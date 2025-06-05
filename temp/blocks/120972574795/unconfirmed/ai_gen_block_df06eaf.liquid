@@ -1,6 +1,341 @@
+{% doc %}
+  @prompt
+    Create custom CSS to reduce line spacing in text boxes, making text more compact with minimal space between lines, WELL, WE'RE MISSING FORMATTING OPTION TO MAKE IT RIGHT LEFT OR CENTER WHICH IS IMPORTANT!
+    , CAN I MAKE EVERY LETTER A DIFFERENT COLOR GOING BETWEEN 6-7 DIFFERENT RAINBOW COLORS
+    
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .rainbow-text-{{ ai_gen_id }} {
+    line-height: {{ block.settings.line_height }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    word-spacing: {{ block.settings.word_spacing }}px;
+    margin-bottom: {{ block.settings.paragraph_spacing }}px;
+    max-width: {{ block.settings.max_width }}px;font-size: {{ block.settings.font_size }}px;text-align: {{ block.settings.text_alignment }};
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} p {
+    margin-top: 0;
+    margin-bottom: {{ block.settings.paragraph_spacing }}px;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} h1,
+  .rainbow-text-{{ ai_gen_id }} h2,
+  .rainbow-text-{{ ai_gen_id }} h3,
+  .rainbow-text-{{ ai_gen_id }} h4,
+  .rainbow-text-{{ ai_gen_id }} h5,
+  .rainbow-text-{{ ai_gen_id }} h6 {
+    line-height: {{ block.settings.heading_line_height }};
+    margin-top: {{ block.settings.heading_top_spacing }}px;
+    margin-bottom: {{ block.settings.heading_bottom_spacing }}px;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} ul,
+  .rainbow-text-{{ ai_gen_id }} ol {
+    padding-left: 20px;
+    margin-bottom: {{ block.settings.paragraph_spacing }}px;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} li {
+    margin-bottom: {{ block.settings.list_item_spacing }}px;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} li:last-child {
+    margin-bottom: 0;
+  }
+
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-1 {
+    color: {{ block.settings.color_1 }};
+  }
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-2 {
+    color: {{ block.settings.color_2 }};
+  }
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-3 {
+    color: {{ block.settings.color_3 }};
+  }
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-4 {
+    color: {{ block.settings.color_4 }};
+  }
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-5 {
+    color: {{ block.settings.color_5 }};
+  }
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-6 {
+    color: {{ block.settings.color_6 }};
+  }
+  {% if block.settings.color_7 != blank %}
+  .rainbow-text-{{ ai_gen_id }} .rainbow-letter-7 {
+    color: {{ block.settings.color_7 }};
+  }
+  {% endif %}
+{% endstyle %}
+
+<div class="rainbow-text-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <rainbow-text-processor-{{ ai_gen_id }}></rainbow-text-processor-{{ ai_gen_id }}>
+</div>
+
+<script>
+  (function() {
+    class RainbowTextProcessor extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const content = {{ block.settings.text_content | json }};
+        const colorCount = {{ block.settings.color_7 | default: '' | size | plus: 6 }};
+        
+        // Parse the HTML content
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = content;
+        
+        // Process each text node to apply rainbow colors
+        this.processNode(tempDiv, colorCount);
+        
+        // Set the processed content
+        this.innerHTML = tempDiv.innerHTML;
+      }
+      
+      processNode(node, colorCount) {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+          const text = node.textContent;
+          let rainbowText = '';
+          
+          for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            if (char.trim() === '') {
+              rainbowText += char; // Preserve whitespace
+            } else {
+              const colorIndex = (i % colorCount) + 1;
+              rainbowText += `<span class="rainbow-letter-${colorIndex}">${char}</span>`;
+            }
+          }
+          
+          const fragment = document.createRange().createContextualFragment(rainbowText);
+          node.parentNode.replaceChild(fragment, node);
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          // Process child nodes
+          const childNodes = Array.from(node.childNodes);
+          childNodes.forEach(child => this.processNode(child, colorCount));
+        }
+      }
+    }
+
+    customElements.define('rainbow-text-processor-{{ ai_gen_id }}', RainbowTextProcessor);
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Rainbow Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "text_content",
+      "label": "Text content",
+      "default": "<p>Rainbow text with each letter a different color!</p>"
+    },
+    {
+      "type": "header",
+      "content": "Rainbow Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_1",
+      "label": "Color 1",
+      "default": "#FF0000"
+    },
+    {
+      "type": "color",
+      "id": "color_2",
+      "label": "Color 2",
+      "default": "#FF9900"
+    },
+    {
+      "type": "color",
+      "id": "color_3",
+      "label": "Color 3",
+      "default": "#FFFF00"
+    },
+    {
+      "type": "color",
+      "id": "color_4",
+      "label": "Color 4",
+      "default": "#00FF00"
+    },
+    {
+      "type": "color",
+      "id": "color_5",
+      "label": "Color 5",
+      "default": "#0000FF"
+    },
+    {
+      "type": "color",
+      "id": "color_6",
+      "label": "Color 6",
+      "default": "#9900FF"
+    },
+    {
+      "type": "color",
+      "id": "color_7",
+      "label": "Color 7(Optional)",
+      "default": "#FF00FF"
+    },
+    {
+      "type": "header",
+      "content": "Text Spacing"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "justify",
+          "label": "Justify"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2,
+      "label": "Line height"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "min": -2,
+      "max": 5,
+      "step": 0.5,
+      "default": 0,
+      "unit": "px",
+      "label": "Letter spacing"
+    },
+    {
+      "type": "range",
+      "id": "word_spacing",
+      "min": -5,
+      "max": 10,
+      "step": 1,
+      "default": 0,
+      "unit": "px",
+      "label": "Word spacing"
+    },
+    {
+      "type": "range",
+      "id": "paragraph_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 10,
+      "unit": "px",
+      "label": "Paragraph spacing"
+    },
+    {
+      "type": "header",
+      "content": "Heading Spacing"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.1,
+      "label": "Heading line height"
+    },
+    {
+      "type": "range",
+      "id": "heading_top_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "default": 20,
+      "unit": "px",
+      "label": "Heading top spacing"
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 10,
+      "unit": "px",
+      "label": "Heading bottom spacing"
+    },
+    {
+      "type": "header",
+      "content": "List Spacing"
+    },
+    {
+      "type": "range",
+      "id": "list_item_spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 5,
+      "unit": "px",
+      "label": "List item spacing"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 16,
+      "unit": "px",
+      "label": "Font size"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "default": 800,
+      "unit": "px",
+      "label": "Maximum width"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rainbow Text"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
