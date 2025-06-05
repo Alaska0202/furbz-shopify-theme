@@ -21,83 +21,65 @@
         "ai_gen_block_d47f656_mRjcrh": {
           "type": "ai_gen_block_d47f656",
           "settings": {
-            "text_content": "<p>THE EVERYDAY COLLECTORS CANDY BIN</p>",
+            "text_content": "<p><strong>THE EVERYDAY COLLECTORS CANDY BIN</strong></p>",
             "text_color": "#ffffff",
-            "outline_color": "#00ff04",
-            "outline_weight": 2,
+            "outline_color": "#da00ff",
+            "outline_weight": 1.5,
             "text_alignment": "center",
-            "line_height": 0.9,
+            "line_height": 0.8,
             "letter_spacing": -1.5,
             "word_spacing": -2,
             "paragraph_spacing": 10,
             "heading_line_height": 0.8,
-            "heading_top_spacing": 10,
+            "heading_top_spacing": 0,
             "heading_bottom_spacing": 6,
             "list_item_spacing": 5,
-            "font_size": 43,
-            "max_width": 800
+            "font_size": 48,
+            "max_width": 1200
           },
           "blocks": {}
         },
-        "ai_gen_block_d47f656_wBftmY": {
+        "ai_gen_block_d47f656_zjxmfd": {
           "type": "ai_gen_block_d47f656",
+          "name": "Custom Text Styling",
           "settings": {
-            "text_content": "<p>THE EVERYDAY COLLECTORS CANDY BIN</p>",
+            "text_content": "<p><strong>WELCOME TO THE STORE – ALL WEIRDOS, NO FAKE</strong></p>",
             "text_color": "#ffffff",
-            "outline_color": "#00ff04",
-            "outline_weight": 2,
+            "outline_color": "#ffffff",
+            "outline_weight": 0.5,
             "text_alignment": "center",
-            "line_height": 0.9,
-            "letter_spacing": -1.5,
+            "line_height": 1.1,
+            "letter_spacing": -0.5,
             "word_spacing": -2,
-            "paragraph_spacing": 10,
+            "paragraph_spacing": 0,
             "heading_line_height": 0.8,
-            "heading_top_spacing": 10,
-            "heading_bottom_spacing": 6,
-            "list_item_spacing": 5,
-            "font_size": 43,
-            "max_width": 800
+            "heading_top_spacing": 5,
+            "heading_bottom_spacing": 0,
+            "list_item_spacing": 0,
+            "font_size": 28,
+            "max_width": 1200
           },
           "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_d47f656_mRjcrh",
-        "ai_gen_block_d47f656_wBftmY"
+        "ai_gen_block_d47f656_zjxmfd"
       ],
       "settings": {}
     },
     "rich_text_CpMayR": {
       "type": "rich-text",
       "blocks": {
-        "text_qVNqBV": {
+        "text_gxEpGR": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>“🛍️ WELCOME TO THE STORE – ALL WEIRDOS, NO FAKES 💅”<br/><br/></strong></p>"
-          }
-        },
-        "text_mgfNmN": {
-          "type": "text",
-          "settings": {
-            "text": "<ul><li>⛓️‍💥<strong> NOT BROKEN</strong></li><li>👻<strong> NOT CURSED</strong></li><li>🌈<strong> JUST VIBING</strong></li></ul>"
-          }
-        },
-        "button_D4kUzB": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>✨ Step right into the <strong>Collector’s Candy Bin</strong> – where every Furby’s got flair, freak, and a full-blown personality.🧠 Whether you’re after cursed cuties, pastel princesses, or retired legends…🛍️ Each one’s a hand-picked, real-deal oddball. No bootlegs. No basics.</p><p>💎 Looking for something… rarer? Weirder? Vaulted?👉 <a href=\"/collections/vault\" title=\"💎 THE VAULT\"><strong>Click here to unlock the vault.</strong></a></p>"
           }
         }
       },
       "block_order": [
-        "text_qVNqBV",
-        "text_mgfNmN",
-        "button_D4kUzB"
+        "text_gxEpGR"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -122,10 +104,10 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "enable_filtering": false,
+        "enable_filtering": true,
         "filter_type": "drawer",
-        "enable_sorting": false,
-        "padding_top": 0,
+        "enable_sorting": true,
+        "padding_top": 32,
         "padding_bottom": 8
       }
     }
