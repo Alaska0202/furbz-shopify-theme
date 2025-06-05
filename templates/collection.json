@@ -23,10 +23,10 @@
           "settings": {
             "text_content": "<p><strong>THE EVERYDAY COLLECTORS CANDY BIN</strong></p>",
             "text_color": "#ffffff",
-            "outline_color": "#da00ff",
-            "outline_weight": 1.5,
+            "outline_color": "#ffffff",
+            "outline_weight": 0.5,
             "text_alignment": "center",
-            "line_height": 0.8,
+            "line_height": 0.9,
             "letter_spacing": -1.5,
             "word_spacing": -2,
             "paragraph_spacing": 10,
@@ -34,7 +34,7 @@
             "heading_top_spacing": 0,
             "heading_bottom_spacing": 6,
             "list_item_spacing": 5,
-            "font_size": 48,
+            "font_size": 36,
             "max_width": 1200
           },
           "blocks": {}
@@ -45,8 +45,8 @@
           "settings": {
             "text_content": "<p><strong>WELCOME TO THE STORE – ALL WEIRDOS, NO FAKE</strong></p>",
             "text_color": "#ffffff",
-            "outline_color": "#ffffff",
-            "outline_weight": 0.5,
+            "outline_color": "#000000",
+            "outline_weight": 1,
             "text_alignment": "center",
             "line_height": 1.1,
             "letter_spacing": -0.5,
@@ -54,33 +54,45 @@
             "paragraph_spacing": 0,
             "heading_line_height": 0.8,
             "heading_top_spacing": 5,
-            "heading_bottom_spacing": 0,
+            "heading_bottom_spacing": 10,
             "list_item_spacing": 0,
             "font_size": 28,
             "max_width": 1200
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_d47f656_xkQJr6": {
+          "type": "ai_gen_block_d47f656",
+          "name": "Custom Text Styling",
+          "settings": {
+            "text_content": "<p>✨ Step right into the <strong>Collector’s Candy Bin</strong> – where every Furby’s got flair, freak, and a full-blown personality.🧠 Whether you’re after cursed cuties, pastel princesses, or retired legends…🛍️ Each one’s a hand-picked, real-deal oddball. No bootlegs. No basics.</p><p>💎 Looking for something… rarer? Weirder? Vaulted?👉 <a href=\"/collections/vault\" title=\"💎 THE VAULT\"><strong>Click here to unlock the vault.</strong></a></p>",
+            "text_color": "#ffffff",
+            "outline_color": "#ffffff",
+            "outline_weight": 0.5,
+            "text_alignment": "center",
+            "line_height": 1.2,
+            "letter_spacing": 0,
+            "word_spacing": 0,
+            "paragraph_spacing": 10,
+            "heading_line_height": 1.1,
+            "heading_top_spacing": 20,
+            "heading_bottom_spacing": 10,
+            "list_item_spacing": 5,
+            "font_size": 16,
+            "max_width": 650
           },
           "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_d47f656_mRjcrh",
-        "ai_gen_block_d47f656_zjxmfd"
+        "ai_gen_block_d47f656_zjxmfd",
+        "ai_gen_block_d47f656_xkQJr6"
       ],
       "settings": {}
     },
     "rich_text_CpMayR": {
       "type": "rich-text",
-      "blocks": {
-        "text_gxEpGR": {
-          "type": "text",
-          "settings": {
-            "text": "<p>✨ Step right into the <strong>Collector’s Candy Bin</strong> – where every Furby’s got flair, freak, and a full-blown personality.🧠 Whether you’re after cursed cuties, pastel princesses, or retired legends…🛍️ Each one’s a hand-picked, real-deal oddball. No bootlegs. No basics.</p><p>💎 Looking for something… rarer? Weirder? Vaulted?👉 <a href=\"/collections/vault\" title=\"💎 THE VAULT\"><strong>Click here to unlock the vault.</strong></a></p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_gxEpGR"
-      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
