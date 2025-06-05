@@ -1,13 +1,72 @@
-{% if settings.logo != blank %}
-  <a href="{{ routes.root_url }}" class="header__logo-link" style="display: inline-block;">
-    <img
-      src="{{ settings.logo | img_url: 'master' }}"
-      alt="{{ shop.name }}"
-      class="header__logo-image"
-      style="max-height: 60px;" />
-  </a>
-{% else %}
-  <h1 class="header__site-name">
-    <a href="{{ routes.root_url }}">{{ shop.name }}</a>
-  </h1>
-{% endif %}
+{% comment %} force Shopify refresh {% endcomment %}
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-hero color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__inner page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    
+    {% case collection.handle %}
+      {% when 'store' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/store-collection-mobile-banner.png?v=1749009672"
+          alt="The Store Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+      
+      {% when 'vault' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/vault-collection-banner.png?v=1749012345"
+          alt="The Vault Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+      
+      {% when 'the-closet' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/closet-collection-banner.png?v=1749012346"
+          alt="The Closet Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+
+      {% when 'longboiz-and-weirdos' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/longboiz-banner.png?v=1749012347"
+          alt="Longboiz & Weirdos Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+
+      {% when 'graveyard' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/graveyard-collection-banner.png?v=1749012348"
+          alt="Graveyard Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+
+      {% when 'furbidden-zone' %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/furbidden-collection-banner.png?v=1749012349"
+          alt="Furbidden Zone Banner"
+          style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" />
+
+      {% else %}
+        <h1 class="collection-hero__title">
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        </h1>
+
+        {% if section.settings.show_collection_description %}
+          <div class="collection-hero__description rte">{{ collection.description }}</div>
+        {% endif %}
+    {% endcase %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Background color scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}
