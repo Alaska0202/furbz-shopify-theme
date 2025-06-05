@@ -68,11 +68,22 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "led_ticker_emtpRc": {
+      "type": "Led-ticker",
+      "name": "LED Ticker Display",
+      "settings": {
+        "ticker_text": "BREAKING NEWS: SPECIAL SALE TODAY - 50% OFF ALL ITEMS - LIMITED TIME OFFER",
+        "text_size": 24,
+        "led_color": "#ff00ea",
+        "scroll_speed": 27
+      }
     }
   },
   "order": [
     "header",
     "announcement_bar_wwqzmR",
-    "custom_liquid_GHaM9y"
+    "custom_liquid_GHaM9y",
+    "led_ticker_emtpRc"
   ]
 }

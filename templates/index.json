@@ -125,12 +125,24 @@
         "ai_gen_block_774e051_hcGHLm"
       ],
       "settings": {}
+    },
+    "page_tEEVNc": {
+      "type": "page",
+      "name": "t:sections.page.presets.name",
+      "settings": {
+        "page": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner_bjVCYk",
     "collection_list_jeme3d",
     "collection_list_d8p4pp",
-    "1748805503db17fff3"
+    "1748805503db17fff3",
+    "page_tEEVNc"
   ]
 }
