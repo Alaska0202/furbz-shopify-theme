@@ -129,6 +129,48 @@ Replace the shop name with a custom-styled span using a class called `furby-titl
 </style>
 
 {%- style -%}
+
+   /* Increase logo size responsively */
+  .header-logo img,
+  .site-logo img,
+  .logo img,
+  .site-header__logo img {
+    transform: scale(1.5); /* Makes logo 50% bigger on all devices */
+    transform-origin: left center; /* Keeps the logo aligned from the left */
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  /* Different sizes for different screen sizes */
+  @media screen and (max-width: 768px) {
+    /* Mobile size */
+    .header-logo img,
+    .site-logo img,
+    .logo img,
+    .site-header__logo img {
+      transform: scale(1.3); /* Slightly smaller on mobile */
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet size */
+    .header-logo img,
+    .site-logo img,
+    .logo img,
+    .site-header__logo img {
+      transform: scale(1.4); /* Medium size on tablets */
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    /* Desktop size */
+    .header-logo img,
+    .site-logo img,
+    .logo img,
+    .site-header__logo img {
+      transform: scale(1.6); /* Largest on desktop */
+    }
+  }
   .header {
     padding: 5px 3rem 5px 3rem;
   }
