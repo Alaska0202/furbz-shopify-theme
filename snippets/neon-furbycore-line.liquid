@@ -1,0 +1,41 @@
+<style>
+  .neon-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #00ff00, #ff00ff);
+    background-size: 400% 400%;
+    animation: neon-shift 8s linear infinite;
+    /* Remove any default padding/margins that might be causing gaps */
+    box-sizing: border-box;
+  }
+  
+  @keyframes neon-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .neon-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    vertical-align: top; /* Removes bottom gap */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  }
+  
+  /* Target any parent elements that might be adding space */
+  .neon-container * {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<div class="neon-container">
+  <img src="https://cdn.shopify.com/s/files/1/0616/4761/8123/files/finalfurb.png?v=1748632752" alt="Furbalicious image" class="neon-image">
+</div>
