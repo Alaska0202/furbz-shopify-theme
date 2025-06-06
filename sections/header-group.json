@@ -73,10 +73,14 @@
       "type": "Led-ticker",
       "name": "LED Ticker Display",
       "settings": {
-        "ticker_text": "BREAKING NEWS: SPECIAL SALE TODAY - 50% OFF ALL ITEMS - LIMITED TIME OFFER",
+        "ticker_text": "LOOK IN THE VAULT FOR THE HOLY GRAILS ........... CHECK BACK OFTEN NEW ADDITIONS DAILY .............",
         "text_size": 24,
         "led_color": "#ff00ea",
-        "scroll_speed": 27
+        "scroll_speed": 45,
+        "padding_top": 45,
+        "padding_bottom": 10,
+        "padding_left": 10,
+        "padding_right": 10
       }
     }
   },
