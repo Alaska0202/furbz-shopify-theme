@@ -1,6 +1,204 @@
+{% doc %}
+  @prompt
+    Create a dark green background for the LED ticker that makes the circular LED elements slightly visible, almost black but with a hint of green. DO NOT adjust anything about the text, this is JUST for the background where the text scrolls, there should vbe like 100's of little unsed circles visible to loook more liike an led board...rather can i give you a url for an image wen can use insterad? Uploaded into fiules here in shopify?, welll.... i'd rrather give you a url for the background and we just use that? is that cool....what should the dimensions be? we willl want hard black lines on top and bottom that gradient out... poadding stilll everythingt he same but using the image.... also can i upload a custom font? I know not google, but I'd like a more LED style?
+    
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .led-ticker-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: {{ block.settings.padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+    background-image: url({{ block.settings.background_image | image_url }});
+    background-size: cover;
+    background-position: center;
+  }
+
+  .led-ticker-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    animation: ticker-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+  }
+
+  .led-ticker-text-{{ ai_gen_id }} {
+    display: inline-block;
+    padding-right: 50px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    font-family: {{ block.settings.font | font_face }}, monospace;
+    text-shadow: 0 0 {{ block.settings.glow_size }}px {{ block.settings.glow_color }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+  }
+
+  @keyframes ticker-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .led-ticker-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding | divided_by: 1.5 }}px;
+    }
+    .led-ticker-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="led-ticker-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="led-ticker-content-{{ ai_gen_id }}">
+    <div class="led-ticker-text-{{ ai_gen_id }}">
+      {{ block.settings.ticker_text }}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "LED Ticker",
+  "tag": null,
+  "class": "led-ticker-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker text",
+      "default": "Your scrolling announcement text here. Add important news, sales, or updates."
+    },
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "font_picker",
+      "id": "font",
+      "label": "Font",
+      "default": "courier_new_n4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#00ff00"
+    },
+    {
+      "type": "color",
+      "id": "glow_color",
+      "label": "Text glow color",
+      "default": "#00ff00"
+    },
+    {
+      "type": "range",
+      "id": "glow_size",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Text glow size",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll speed (seconds)",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "LED Ticker"
+    }
+  ]
+}
 {% endschema %}
