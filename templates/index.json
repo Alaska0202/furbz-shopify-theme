@@ -81,7 +81,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 24,
-        "padding_bottom": 40
+        "padding_bottom": 0
       }
     },
     "image_banner_DRGdCP": {
@@ -110,8 +110,8 @@
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": true
@@ -154,7 +154,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 64,
+        "padding_top": 12,
         "padding_bottom": 32
       }
     }
