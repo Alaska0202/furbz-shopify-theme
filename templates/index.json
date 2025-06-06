@@ -26,14 +26,21 @@
         "show_text_below": true
       }
     },
-    "custom_liquid_wA77VY": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "image_banner_HHmE3d": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "image": "shopify://shop_images/FURBLINE.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-2",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "collection_list_jeme3d": {
@@ -121,7 +128,7 @@
   },
   "order": [
     "image_banner_bjVCYk",
-    "custom_liquid_wA77VY",
+    "image_banner_HHmE3d",
     "collection_list_jeme3d",
     "collection_list_d8p4pp"
   ]
