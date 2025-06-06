@@ -81,7 +81,40 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 24,
-        "padding_bottom": 0
+        "padding_bottom": 40
+      }
+    },
+    "image_banner_DRGdCP": {
+      "type": "image-banner",
+      "blocks": {
+        "buttons_9EPDgx": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "WHY WE LEFT ETSY",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "buttons_9EPDgx"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/ADPOT_A_WEIRD_LITTLE_FREAK_TODAY_-_SCARE_YOUR_KIDS.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "collection_list_d8p4pp": {
@@ -121,8 +154,8 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 64,
+        "padding_bottom": 32
       }
     }
   },
@@ -130,6 +163,7 @@
     "image_banner_bjVCYk",
     "image_banner_HHmE3d",
     "collection_list_jeme3d",
+    "image_banner_DRGdCP",
     "collection_list_d8p4pp"
   ]
 }
