@@ -1,3 +1,32 @@
+/* Increased logo scaling for desktop */
+.header__heading-link.furby-title,
+.header__heading-link.furby-title img,
+.header__heading-link img,
+img.header__heading-logo,
+.header__heading-link svg,
+.header__heading-link {
+  transform: scale(2.0) !important; /* Increased from 1.6 to 2.0 */
+  transform-origin: center center !important;
+  max-width: none !important;
+  max-height: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 auto !important;
+}
+
+/* Mobile adjustments with bigger logo */
+@media screen and (max-width: 768px) {
+  .header__heading-link.furby-title,
+  .header__heading-link.furby-title img,
+  .header__heading-link img,
+  img.header__heading-logo,
+  .header__heading-link svg,
+  .header__heading-link {
+    transform: scale(1.6) !important; /* Increased from 1.3 to 1.6 */
+    transform-origin: center center !important;
+  }
+}
+
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <style>
