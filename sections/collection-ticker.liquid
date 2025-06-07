@@ -49,22 +49,16 @@
 
 <div class="collection-ticker-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
   <div class="ticker-content-{{ ai_gen_id }}" id="ticker-{{ ai_gen_id }}">
-    {% liquid
-      assign collection_ticker_text = collection.metafields.custom.ticker_text | default: block.settings.default_text
-      assign ticker_items = collection_ticker_text | split: '|'
-      
-      if ticker_items.size == 0
-        assign ticker_items = block.settings.default_text | split: '|'
-      endif
-    %}
-    
+    {% assign raw_ticker_text = block.settings.default_text %}
+    {% assign ticker_items = raw_ticker_text | split: '|' %}
+
     {% for item in ticker_items %}
       <div class="ticker-item-{{ ai_gen_id }}">{{ item | strip }}</div>
       {% unless forloop.last %}
         <div class="ticker-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</div>
       {% endunless %}
     {% endfor %}
-    
+
     {% for item in ticker_items %}
       <div class="ticker-item-{{ ai_gen_id }}">{{ item | strip }}</div>
       {% unless forloop.last %}
@@ -80,46 +74,43 @@
     constructor() {
       super();
     }
-    
+
     connectedCallback() {
       this.tickerContent = document.getElementById('ticker-{{ ai_gen_id }}');
       this.adjustTickerWidth();
       window.addEventListener('resize', this.adjustTickerWidth.bind(this));
     }
-    
+
     adjustTickerWidth() {
       if (!this.tickerContent) return;
-      
+
       const tickerItems = this.tickerContent.querySelectorAll('.ticker-item-{{ ai_gen_id }}');
       const separators = this.tickerContent.querySelectorAll('.ticker-separator-{{ ai_gen_id }}');
-      
+
       if (tickerItems.length === 0) return;
-      
-      // Reset animation temporarily to measure true width
+
       this.tickerContent.style.animation = 'none';
-      
-      // Get the width of the first half of items (original set)
+
       let totalWidth = 0;
       const halfwayPoint = tickerItems.length / 2;
-      
+
       for (let i = 0; i < halfwayPoint; i++) {
         totalWidth += tickerItems[i].offsetWidth;
         if (i < separators.length && i < halfwayPoint - 1) {
           totalWidth += separators[i].offsetWidth;
         }
       }
-      
-      // Restore animation
+
       setTimeout(() => {
         this.tickerContent.style.animation = '';
       }, 10);
     }
-    
+
     disconnectedCallback() {
       window.removeEventListener('resize', this.adjustTickerWidth.bind(this));
     }
   }
-  
+
   customElements.define('collection-ticker-{{ ai_gen_id }}', CollectionTicker);
 })();
 </script>
@@ -136,7 +127,7 @@
     {
       "type": "textarea",
       "id": "default_text",
-      "label": "Default ticker text",
+      "label": "Ticker text",
       "info": "Separate items with | character",
       "default": "Free shipping on orders over $100 | New arrivals weekly | Limited time offers"
     },
@@ -221,22 +212,10 @@
       "id": "font_weight",
       "label": "Font weight",
       "options": [
-        {
-          "value": "400",
-          "label": "Regular"
-        },
-        {
-          "value": "500",
-          "label": "Medium"
-        },
-        {
-          "value": "600",
-          "label": "Semibold"
-        },
-        {
-          "value": "700",
-          "label": "Bold"
-        }
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
       ],
       "default": "400"
     },
@@ -259,10 +238,6 @@
       "unit": "s",
       "label": "Scroll speed",
       "default": 30
-    },
-    {
-      "type": "paragraph",
-      "content": "To set collection-specific ticker text, add a metafield with namespace 'custom' and key 'ticker_text' to your collections."
     }
   ],
   "presets": [
