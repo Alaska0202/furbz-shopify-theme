@@ -1,6 +1,242 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .custom-text-{{ ai_gen_id }} {
+    line-height: {{ block.settings.line_height }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    word-spacing: {{ block.settings.word_spacing }}px;
+    margin-bottom: {{ block.settings.paragraph_spacing }}px;
+    max-width: {{ block.settings.max_width }}px;
+    font-size: {{ block.settings.font_size }}px;text-align: {{ block.settings.text_alignment }};
+    margin-left: auto;
+    margin-right: auto;
+    color: {{ block.settings.text_color }};
+    -webkit-text-stroke: {{ block.settings.outline_weight }}px {{ block.settings.outline_color }};text-stroke: {{ block.settings.outline_weight }}px {{ block.settings.outline_color }};
   }
+
+  .custom-text-{{ ai_gen_id }} p {
+    margin-top: 0;
+    margin-bottom: {{ block.settings.paragraph_spacing }}px;
+  }
+
+  .custom-text-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .custom-text-{{ ai_gen_id }} h1,
+  .custom-text-{{ ai_gen_id }} h2,
+  .custom-text-{{ ai_gen_id }} h3,
+  .custom-text-{{ ai_gen_id }} h4,
+  .custom-text-{{ ai_gen_id }} h5,
+  .custom-text-{{ ai_gen_id }} h6 {
+    line-height: {{ block.settings.heading_line_height }};
+    margin-top: {{ block.settings.heading_top_spacing }}px;
+    margin-bottom: {{ block.settings.heading_bottom_spacing }}px;color: {{ block.settings.text_color }};-webkit-text-stroke: {{ block.settings.outline_weight }}px {{ block.settings.outline_color }};
+    text-stroke: {{ block.settings.outline_weight }}px {{ block.settings.outline_color }};
+  }
+
+  .custom-text-{{ ai_gen_id }} ul,
+  .custom-text-{{ ai_gen_id }} ol {
+    padding-left: 20px;
+    margin-bottom: {{ block.settings.paragraph_spacing }}px;
+  }
+
+  .custom-text-{{ ai_gen_id }} li {
+    margin-bottom: {{ block.settings.list_item_spacing }}px;
+  }
+
+  .custom-text-{{ ai_gen_id }} li:last-child {
+    margin-bottom: 0;
+  }
+{% endstyle %}
+
+<div class="custom-text-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {{ block.settings.text_content }}
+</div>
+
+{% schema %}
+{
+  "name": "Custom Text Styling",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "text_content",
+      "label": "Text content",
+      "default": "<p>Custom styled text with outline effect!</p>"
+    },
+    {
+      "type": "header",
+      "content": "Text Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "outline_color",
+      "label": "Outline color",
+      "default": "#FF0000"
+    },
+    {
+      "type": "range",
+      "id": "outline_weight",
+      "min": 0.5,
+      "max": 5,
+      "step": 0.5,
+      "default": 1,
+      "unit": "px",
+      "label": "Outline weight"
+    },
+    {
+      "type": "header",
+      "content": "Text Spacing"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "justify",
+          "label": "Justify"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2,
+      "label": "Line height"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "min": -2,
+      "max": 5,
+      "step": 0.5,
+      "default": 0,
+      "unit": "px",
+      "label": "Letter spacing"
+    },
+    {
+      "type": "range",
+      "id": "word_spacing",
+      "min": -5,
+      "max": 10,
+      "step": 1,
+      "default": 0,
+      "unit": "px",
+      "label": "Word spacing"
+    },
+    {
+      "type": "range",
+      "id": "paragraph_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 10,
+      "unit": "px",
+      "label": "Paragraph spacing"
+    },
+    {
+      "type": "header",
+      "content": "Heading Spacing"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.1,
+      "label": "Heading line height"
+    },
+    {
+      "type": "range",
+      "id": "heading_top_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "default": 20,
+      "unit": "px",
+      "label": "Heading top spacing"
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 10,
+      "unit": "px",
+      "label": "Heading bottom spacing"
+    },
+    {
+      "type": "header",
+      "content": "List Spacing"
+    },
+    {
+      "type": "range",
+      "id": "list_item_spacing",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 5,
+      "unit": "px",
+      "label": "List item spacing"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 72,
+      "step": 1,
+      "default": 16,
+      "unit": "px",
+      "label": "Font size"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "default": 800,
+      "unit": "px",
+      "label": "Maximum width"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Text Styling"
+    }
+  ],
+}
 {% endschema %}
