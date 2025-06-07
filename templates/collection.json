@@ -15,59 +15,6 @@
         "color_scheme": "scheme-1"
       }
     },
-    "17490926639c0973d2": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_d47f656_mRjcrh": {
-          "type": "ai_gen_block_d47f656",
-          "settings": {
-            "text_content": "<p><strong>SEALED, VERIFIED, NUMBERED and COLLECTOR GRADE SHELF CENTERPIECES</strong></p>",
-            "text_color": "#ffffff",
-            "outline_color": "#f6c200",
-            "outline_weight": 1.5,
-            "text_alignment": "center",
-            "line_height": 0.9,
-            "letter_spacing": -1.5,
-            "word_spacing": -2,
-            "paragraph_spacing": 10,
-            "heading_line_height": 0.8,
-            "heading_top_spacing": 0,
-            "heading_bottom_spacing": 6,
-            "list_item_spacing": 5,
-            "font_size": 36,
-            "max_width": 1200
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_d47f656_zjxmfd": {
-          "type": "ai_gen_block_d47f656",
-          "name": "Custom Text Styling",
-          "settings": {
-            "text_content": "<p><strong>THIS IS WHAT YOU CAME HERE FOR - THE BEST OF THE BEST</strong></p>",
-            "text_color": "#ffffff",
-            "outline_color": "#000000",
-            "outline_weight": 1,
-            "text_alignment": "center",
-            "line_height": 1.1,
-            "letter_spacing": -0.5,
-            "word_spacing": -2,
-            "paragraph_spacing": 0,
-            "heading_line_height": 0.8,
-            "heading_top_spacing": 5,
-            "heading_bottom_spacing": 10,
-            "list_item_spacing": 3,
-            "font_size": 28,
-            "max_width": 1200
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_d47f656_mRjcrh",
-        "ai_gen_block_d47f656_zjxmfd"
-      ],
-      "settings": {}
-    },
     "17492588804090f608": {
       "type": "_blocks",
       "blocks": {
@@ -95,18 +42,6 @@
       ],
       "settings": {}
     },
-    "rich_text_CpMayR": {
-      "type": "rich-text",
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 8
-      }
-    },
     "main-product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -130,9 +65,7 @@
   },
   "order": [
     "main-collection-banner",
-    "17490926639c0973d2",
     "17492588804090f608",
-    "rich_text_CpMayR",
     "main-product-grid"
   ]
 }
