@@ -12,25 +12,37 @@
     "custom-banner-image": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0616/4761/8123/files/1.png?v=1748236350\" alt=\"THE STORE Banner\" style=\"width: 100%; margin-bottom: 24px;\" />"
+        "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0616/4761/8123/files/1.png?v=1748236350\" alt=\"THE STORE Banner\" style=\"width: 100%; margin-bottom: 24px;\" />",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 4
       }
     },
     "text-block-1": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div style=\"text-align: center; font-size: 36px; color: white; text-shadow: 0 0 5px #f6c200; margin-bottom: 10px;\"><strong>SEALED, VERIFIED, COLLECTOR GRADE PIECES</strong></div>"
+        "custom_liquid": "<div style=\"text-align: center; font-size: 36px; color: white; text-shadow: 0 0 5px #f6c200; margin-bottom: 10px;\"><strong>SEALED, VERIFIED, COLLECTOR GRADE PIECES</strong></div>",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 0
       }
     },
     "text-block-2": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div style=\"text-align: center; font-size: 24px; color: white; text-shadow: 0 0 5px #000; margin-bottom: 16px;\"><strong>YOU KNOW WHY YOU’RE HERE — THIS IS THE GOOD STUFF</strong></div>"
+        "custom_liquid": "<div style=\"text-align: center; font-size: 24px; color: white; text-shadow: 0 0 5px #000; margin-bottom: 16px;\"><strong>YOU KNOW WHY YOU’RE HERE — THIS IS THE GOOD STUFF</strong></div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "led-ticker": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<marquee style=\"color:#ff00ea; background:#000; padding:8px; font-size:18px;\">Free shipping on orders over $100 • New arrivals weekly • Limited time offers</marquee>"
+        "custom_liquid": "<marquee style=\"color:#ff00ea; background:#000; padding:8px; font-size:18px;\">Free shipping on orders over $100 • New arrivals weekly • Limited time offers</marquee>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "main-product-grid": {
@@ -39,9 +51,16 @@
         "products_per_page": 20,
         "columns_desktop": 4,
         "columns_mobile": "2",
-        "enable_filtering": true,
-        "enable_sorting": true,
         "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
         "padding_top": 32,
         "padding_bottom": 8
       }
