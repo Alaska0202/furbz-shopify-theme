@@ -21,10 +21,10 @@
         "ai_gen_block_d47f656_mRjcrh": {
           "type": "ai_gen_block_d47f656",
           "settings": {
-            "text_content": "<p><strong>THE EVERYDAY COLLECTORS CANDY BIN</strong></p>",
+            "text_content": "<p><strong>SEALED, VERIFIED, NUMBERED and COLLECTOR GRADE SHELF CENTERPIECES</strong></p>",
             "text_color": "#ffffff",
-            "outline_color": "#ffffff",
-            "outline_weight": 0.5,
+            "outline_color": "#f6c200",
+            "outline_weight": 1.5,
             "text_alignment": "center",
             "line_height": 0.9,
             "letter_spacing": -1.5,
@@ -43,7 +43,7 @@
           "type": "ai_gen_block_d47f656",
           "name": "Custom Text Styling",
           "settings": {
-            "text_content": "<p><strong>WELCOME TO THE STORE – ALL WEIRDOS, NO FAKE</strong></p>",
+            "text_content": "<p><strong>THIS IS WHAT YOU CAME HERE FOR - THE BEST OF THE BEST</strong></p>",
             "text_color": "#ffffff",
             "outline_color": "#000000",
             "outline_weight": 1,
@@ -55,7 +55,7 @@
             "heading_line_height": 0.8,
             "heading_top_spacing": 5,
             "heading_bottom_spacing": 10,
-            "list_item_spacing": 0,
+            "list_item_spacing": 3,
             "font_size": 28,
             "max_width": 1200
           },
@@ -68,15 +68,32 @@
       ],
       "settings": {}
     },
-    "led_ticker_PkQL3G": {
-      "type": "Led-ticker",
-      "name": "LED Ticker Display",
-      "settings": {
-        "ticker_text": "✨ Step right into the Collector’s Candy Bin – where every Furby’s got flair, freak, and a full-blown personality.🧠 Whether you’re after cursed cuties, pastel princesses, or retired legends…🛍️ Each one’s a hand-picked, real-deal oddball. No bootlegs. No basics.💎 Looking for something… rarer? Weirder? Vaulted?👉 Click here to unlock the vault.",
-        "text_size": 36,
-        "led_color": "#ff00d9",
-        "scroll_speed": 60
-      }
+    "17492588804090f608": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7a106ec_MEWRdB": {
+          "type": "ai_gen_block_7a106ec",
+          "settings": {
+            "default_text": "Free shipping on orders over $100 | New arrivals weekly | Limited time offers",
+            "separator": "•",
+            "margin_top": 15,
+            "margin_bottom": 0,
+            "padding": 7,
+            "background_color": "#000000",
+            "text_color": "#ff00ea",
+            "font_size": 19,
+            "font_size_mobile": 16,
+            "font_weight": "400",
+            "item_spacing": 10,
+            "scroll_speed": 25
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7a106ec_MEWRdB"
+      ],
+      "settings": {}
     },
     "rich_text_CpMayR": {
       "type": "rich-text",
@@ -114,7 +131,7 @@
   "order": [
     "main-collection-banner",
     "17490926639c0973d2",
-    "led_ticker_PkQL3G",
+    "17492588804090f608",
     "rich_text_CpMayR",
     "main-product-grid"
   ]
