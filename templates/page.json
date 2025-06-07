@@ -1,14 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_pUhWKD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jYBbYb": {
+          "type": "heading",
+          "settings": {
+            "heading": "The REAL reason we left Etsy",
+            "heading_size": "h2"
+          }
+        },
+        "text_PpkEEX": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p><h3><strong>💔 Why We Left Etsy (Mostly)</strong></h3><p></p><p><br/></p><p>We blew up fast — too fast for Etsy to believe it was real.<br/>After <em>tons of 5-star reviews</em>, <strong>surging sales</strong>, and a loyal community that showed up hard, Etsy decided something had to be wrong. Their response?<br/>👉 <strong>Locking our funds for 180 days.</strong>We were punished for doing well — not for doing wrong. And there was <em>nothing</em> wrong.<br/>So we built this.<br/><strong>The Vault lives here now.</strong> The rarest, weirdest, wildest pieces are sold exclusively on our site — no fees, no limits, no censorship.<br/>If you’ve loved what we do, <strong>support us directly</strong>. Etsy will stay up for now, but only this site gets the real heat.<br/>🙏 Thank you for believing in our work. Let’s keep it weird — our way.<br/><br/><br/></p>"
+          }
+        },
+        "button_qVtTip": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP",
+            "button_link": "shopify://collections/store",
+            "button_style_secondary": true,
+            "button_label_2": "THE VAULT",
+            "button_link_2": "shopify://collections/vault",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_jYBbYb",
+        "text_PpkEEX",
+        "button_qVtTip"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_pUhWKD"
   ]
 }
