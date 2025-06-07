@@ -9,15 +9,37 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "banner": {
+      "type": "image-banner",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "image": "shopify://shop_images/banner_store.png"
+      }
+    },
+    "ticker": {
+      "type": "collection-ticker",
+      "settings": {}
+    },
+    "text": {
+      "type": "custom-text-styling",
+      "settings": {
+        "text_content": "<p><strong>YOU KNOW WHY YOU’RE HERE — THIS IS THE GOOD STUFF</strong></p>",
+        "text_alignment": "center",
+        "font_size": 32
+      }
+    },
+    "product_grid": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "the-store",
+        "columns_desktop": 4,
+        "columns_mobile": "2"
       }
     }
   },
   "order": [
-    "main"
+    "banner",
+    "ticker",
+    "text",
+    "product_grid"
   ]
 }
